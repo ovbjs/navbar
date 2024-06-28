@@ -14,7 +14,11 @@ interface IProps {
   bgColor?: string;
   root?: string;
   mask?: string;
+  tab?: string;
   dataLists: ITabType[];
+  activeColor: string;
+  color: string;
+  onChange?: (value: string) => void;
 }
 
 const Navbar: FC<IProps> = ({
@@ -25,6 +29,10 @@ const Navbar: FC<IProps> = ({
   bgColor,
   dataLists,
   mask,
+  tab,
+  activeColor,
+  color,
+  onChange,
 }) => {
   const [maskWidth, setMaskWidth] = useState<string>("");
   const [selectTab, setSelectTab] = useState<string>(dataLists[0].value);
@@ -42,6 +50,14 @@ const Navbar: FC<IProps> = ({
       maskRef.current.style.transform = `translate3d(${index * 100}%, 0, 0)`;
     }
   }, [selectTab]);
+
+  const handleTabChange = (value: string) => {
+    setSelectTab(value);
+
+    if (onChange) {
+      onChange(value);
+    }
+  };
 
   return (
     <S.Container
@@ -63,7 +79,10 @@ const Navbar: FC<IProps> = ({
             label={data.label}
             value={data.value}
             active={selectTab === data.value}
-            setActive={setSelectTab}
+            setActive={handleTabChange}
+            className={tab}
+            activeColor={activeColor}
+            color={color}
           />
         ))}
       </div>

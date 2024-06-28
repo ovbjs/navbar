@@ -1,18 +1,19 @@
 {
   "name": "ovb-navbar",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
+  "types": "dist/types.d.ts",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": ["react", "navbar"],
+  "keywords": [
+    "react",
+    "navbar"
+  ],
   "author": "Oliver Boucher",
   "license": "ISC",
   "devDependencies": {
@@ -30,6 +31,7 @@
     "@storybook/react-vite": "^8.1.11",
     "@storybook/test": "^8.1.11",
     "prop-types": "^15.8.1",
+    "rollup": "^4.18.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^8.1.11"

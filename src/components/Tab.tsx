@@ -1,14 +1,25 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 import { ITabType } from "./Navbar";
 import * as S from "./Tab.styled";
 
 interface IProps extends ITabType {
   key: number;
   active: boolean;
-  setActive: Dispatch<SetStateAction<string>>;
+  setActive: (value: string) => void;
+  className?: string;
+  activeColor: string;
+  color: string;
 }
 
-const Tab: FC<IProps> = ({ value, label, active, setActive }) => {
+const Tab: FC<IProps> = ({
+  value,
+  label,
+  active,
+  setActive,
+  className,
+  activeColor,
+  color,
+}) => {
   const handleSelect = () => {
     setActive(value);
   };
@@ -22,7 +33,14 @@ const Tab: FC<IProps> = ({ value, label, active, setActive }) => {
         checked={active}
         onChange={handleSelect}
       />
-      <S.Label htmlFor={value} onClick={handleSelect}>
+      <S.Label
+        htmlFor={value}
+        onClick={handleSelect}
+        className={className}
+        $active={active}
+        $activeColor={activeColor}
+        $color={color}
+      >
         {label}
       </S.Label>
     </>
