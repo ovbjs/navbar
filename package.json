@@ -1,5 +1,5 @@
 {
-  "name": "@ovb/modal",
+  "name": "ovb-navbar",
   "version": "0.0.1",
   "description": "",
   "main": "dist/cjs/index.js",
@@ -12,8 +12,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react", "navbar"],
+  "author": "Oliver Boucher",
   "license": "ISC",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
