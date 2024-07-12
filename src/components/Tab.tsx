@@ -9,6 +9,7 @@ interface IProps extends ITabType {
   className?: string;
   activeColor: string;
   color: string;
+  activeEffect?: string;
 }
 
 const Tab: FC<IProps> = ({
@@ -19,6 +20,7 @@ const Tab: FC<IProps> = ({
   className,
   activeColor,
   color,
+  activeEffect,
 }) => {
   const handleSelect = () => {
     setActive(value);
@@ -40,6 +42,7 @@ const Tab: FC<IProps> = ({
         $active={active}
         $activeColor={activeColor}
         $color={color}
+        $activeEffect={activeEffect}
       >
         {label}
       </S.Label>

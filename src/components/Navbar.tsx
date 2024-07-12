@@ -17,6 +17,7 @@ interface IProps {
   tab?: string;
   dataLists: ITabType[];
   activeColor: string;
+  activeEffect?: string;
   color: string;
   onChange?: (value: string) => void;
 }
@@ -31,6 +32,7 @@ const Navbar: FC<IProps> = ({
   mask,
   tab,
   activeColor,
+  activeEffect,
   color,
   onChange,
 }) => {
@@ -82,6 +84,7 @@ const Navbar: FC<IProps> = ({
             setActive={handleTabChange}
             className={tab}
             activeColor={activeColor}
+            activeEffect={activeEffect}
             color={color}
           />
         ))}

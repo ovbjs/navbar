@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface IProps {
   $activeColor: string;
+  $activeEffect?: string;
   $color: string;
   $active: boolean;
 }
@@ -15,6 +16,7 @@ const Label = styled.label<IProps>`
   cursor: pointer;
   color: ${({ $active, $activeColor, $color }) =>
     $active ? $activeColor : $color};
+  box-shadow: ${({ $active, $activeEffect }) => $active && $activeEffect};
 `;
 
 const Input = styled.input`
