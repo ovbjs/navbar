@@ -31,7 +31,7 @@ const Tab: FC<IProps> = ({
       <S.Input
         type="radio"
         name={value}
-        id={value}
+        id={`${value}-tab`}
         checked={active}
         onChange={handleSelect}
       />

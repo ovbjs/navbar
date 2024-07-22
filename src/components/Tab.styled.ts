@@ -16,7 +16,7 @@ const Label = styled.label<IProps>`
   cursor: pointer;
   color: ${({ $active, $activeColor, $color }) =>
     $active ? $activeColor : $color};
-  box-shadow: ${({ $active, $activeEffect }) => $active && $activeEffect};
+  filter: ${({ $active, $activeEffect }) => $active && $activeEffect};
 `;
 
 const Input = styled.input`

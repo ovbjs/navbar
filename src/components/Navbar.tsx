@@ -19,6 +19,7 @@ interface IProps {
   activeColor: string;
   activeEffect?: string;
   color: string;
+  activeTab?: string;
   onChange?: (value: string) => void;
 }
 
@@ -34,6 +35,7 @@ const Navbar: FC<IProps> = ({
   activeColor,
   activeEffect,
   color,
+  activeTab,
   onChange,
 }) => {
   const [maskWidth, setMaskWidth] = useState<string>("");
@@ -52,6 +54,16 @@ const Navbar: FC<IProps> = ({
       maskRef.current.style.transform = `translate3d(${index * 100}%, 0, 0)`;
     }
   }, [selectTab]);
+
+  useEffect(() => {
+    if (activeTab) {
+      setSelectTab(activeTab);
+
+      if (onChange) {
+        onChange(activeTab);
+      }
+    }
+  }, [activeTab]);
 
   const handleTabChange = (value: string) => {
     setSelectTab(value);
